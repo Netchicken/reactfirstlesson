@@ -2,6 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 
+import CalcButtons from "./Components/CalcButtons";
+
 function App() {
   const [answer, setAnswer] = useState("");
   const [first, setFirst] = useState(4);
@@ -17,7 +19,7 @@ function App() {
           break;
 
         case "+":
-          setAnswer(first + second);
+          setAnswer(parseInt(first) + parseInt(second));
           break;
 
         case "X":
@@ -49,12 +51,7 @@ function App() {
       />
       =
       <input type='number' defaultValue={answer} />
-      <div>
-        <button onClick={() => Calculate("+")}>+</button>
-        <button onClick={() => Calculate("-")}>-</button>
-        <button onClick={() => Calculate("X")}>*</button>
-        <button onClick={() => Calculate("/")}>/</button>
-      </div>
+     <CalcButtons Calculate={Calculate} first={first} second={second}/>
     </div>
   );
 }
