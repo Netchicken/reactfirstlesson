@@ -10,7 +10,7 @@ function App() {
 
   const updateCalculation = (value) => {
     setCalculation(calculation + String(value));
-    console.log("updateCalculation", value + " " + first);
+    console.log("updateCalculation", value);
 
     if (value === "=") {
       setCalculation(new Function("return " + calculation));
