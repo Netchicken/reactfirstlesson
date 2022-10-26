@@ -1,16 +1,13 @@
-export const CalcButtons = (props) => {
-    
+const CalcButtons = ({ updateCalculation }) => {
+  return (
+    <div>
+      <button onClick={() => updateCalculation("+")}>+</button>
+      <button onClick={() => updateCalculation("-")}>-</button>
+      <button onClick={() => updateCalculation("*")}>*</button>
+      <button onClick={() => updateCalculation("/")}>/</button>
+      <button onClick={() => updateCalculation("=")}>=</button>
+    </div>
+  );
+};
 
-return (
-  <div>
-    <button onClick={() => props.Calculate("+")}>+</button>
-    <button onClick={() => props.Calculate("-")}>-</button>
-    <button onClick={() => props.Calculate("X")}>*</button>
-    <button onClick={() => props.Calculate("/")}>/</button>
-  </div>
-);
-
-
-} 
-
-// default CalcButtons;
+export default CalcButtons;
